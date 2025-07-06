@@ -53,12 +53,12 @@ export const login = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(400).json({ message: "Invalid credentials" });
+      return res.status(400).json({ message: "Invalid User" });
     }
 
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
     if (!isPasswordCorrect) {
-      return res.status(400).json({ message: "Invalid credentials" });
+      return res.status(400).json({ message: "Invalid Password" });
     }
 
     generateToken(user._id, res);
@@ -84,17 +84,6 @@ export const logout = (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
-
-// export const logout = (req, res) => {
-//   res.cookie('jwt', '', {
-//     httpOnly: true,
-//     expires: new Date(0),
-//     sameSite: "Lax", // or "None" with secure: true
-//     secure: process.env.NODE_ENV === 'production',
-//   });
-
-//   res.status(200).json({ message: "Logged out successfully" });
-// };
 
 export const updateProfile = async (req, res) => {
   try {
@@ -123,7 +112,7 @@ export const checkAuth = (req, res) => {
   try {
     res.status(200).json(req.user);
   } catch (error) {
-    console.log("Error in checkAuth controller", error.message);
+    console.log("Error occur in checkAuth", error.message);
     res.status(500).json({ message: "Internal Server Error" });
   }
 };

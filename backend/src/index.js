@@ -16,9 +16,8 @@ app.use(cookieParser());
 // Enable CORS for any device (any origin)
 app.use(cors({
   origin: "http://localhost:5173", // Allow requests from any origin/device
-  credentials: true // Set to true only if you specify a specific origin
-  // allowedHeaders: ["application/json"],
-  // methods: ["GET", "POST", "DELETE", "PUT"]
+  credentials: true ,
+  methods: ["GET", "POST", "DELETE", "PUT"]
 }));
 
 const PORT = process.env.PORT || 3000;
