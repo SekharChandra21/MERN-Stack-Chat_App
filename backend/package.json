@@ -18,6 +18,7 @@
   "dependencies": {
     "backend": "file:",
     "bcryptjs": "^3.0.2",
+    "chat_application": "file:..",
     "cloudinary": "^2.7.0",
     "cookie-parse": "^0.4.0",
     "cookie-parser": "^1.4.7",
