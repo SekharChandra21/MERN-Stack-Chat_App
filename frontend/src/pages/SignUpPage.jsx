@@ -11,7 +11,7 @@ const SignUpPage = () => {
       email: "",
       password: "",
     });
-
+console.log(useAuthStore.getState())
 const {signUp , isSigningUp} = useAuthStore();
 
 const validateForm = () => {
