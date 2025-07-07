@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 // Enable CORS for any device (any origin)
 app.use(cors({
-  origin: "http://localhost:5173", // Allow requests from any origin/device
+  origin: "https://mern-stack-chat-app-saa4.onrender.com/", // Allow requests from any origin/device
   credentials: true ,
   methods: ["GET", "POST", "DELETE", "PUT"]
 }));
